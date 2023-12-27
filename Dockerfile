@@ -15,7 +15,7 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
-ENV MONGODB_URL 
+ENV MONGODB_URL ${{ secrets.MONGODB_URI }}
 
 ENV SECRET_KEY 1234567890
 
