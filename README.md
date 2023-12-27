@@ -64,5 +64,5 @@ docker pull sidvjsingh/ez:1.0.0
 ```
 
 ```
-docker run -p 5000:5000 sidvjsingh/ez:1.0.0
+docker run -p 8000:8000 sidvjsingh/ez:1.0.0
 ```
