@@ -1,5 +1,6 @@
 from flask import render_template, redirect, url_for, request, flash
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+from flask_login import LoginManager, login_user
+from flask_login import login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import app, mongo
 from app.models import User
@@ -17,7 +18,9 @@ def load_user(user_id):
     user_data = mongo.db.users.find_one({'_id': user_id})
 
     if user_data:
-        return User(user_data['username'], user_data['password'], user_data['role'])
+        return User(user_data['username'], 
+                    user_data['password'], 
+                    user_data['role'])
 
     return None  # Return None if user not found
 

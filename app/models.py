@@ -1,6 +1,7 @@
 from flask_login import UserMixin
 from app import mongo
 
+
 class User(UserMixin):
     def __init__(self, username, password, role):
         self.username = username
